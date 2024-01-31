@@ -5,7 +5,7 @@ namespace Restaurant.Models
   public class RestaurantContext : DbContext
   {
     public DbSet<Cuisine> Cuisines { get; set; }
-    // public DbSet<Item> Items { get; set; }
+    public DbSet<Diner> Diners { get; set; }
 
     public RestaurantContext(DbContextOptions options) : base(options) { }
   }
