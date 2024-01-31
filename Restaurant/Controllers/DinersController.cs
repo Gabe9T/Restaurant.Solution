@@ -24,8 +24,19 @@ namespace Restaurant.Controllers
         public ActionResult Create(int id)
         {
             ViewBag.Cuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
-            // Cuisine cuisine = new SelectList(_db.Cuisines, "CuisineId", "Name");
             return View();
+        }
+        // Cuisine cuisine = new SelectList(_db.Cuisines, "CuisineId", "Name");
+        [HttpPost]
+        public ActionResult Create(Diner diner)
+        {
+            if (diner.DinerId == 0)
+            {
+                return RedirectToAction("Create");
+            }
+            _db.Diners.Add(diner);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
