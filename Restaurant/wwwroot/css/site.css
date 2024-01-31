@@ -16,3 +16,20 @@ html {
 body {
   margin-bottom: 60px;
 }
+input {
+	background-color: whitesmoke;
+	border-radius: 3px;
+	border-color: transparent;
+}
+textarea {
+	background-color: whitesmoke;
+	border-radius: 3px;
+	border-color: transparent;
+}
+
+input:hover {
+	border-color: lightcoral;
+}
+textarea:hover {
+	border-color: lightcoral;
+}
