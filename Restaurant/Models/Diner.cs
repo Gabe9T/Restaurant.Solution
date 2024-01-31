@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.ComponentModel;
+
 
 namespace Restaurant.Models
 {
@@ -8,6 +10,7 @@ namespace Restaurant.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Specialty { get; set; }
+        [DisplayName("Cuisine")]
         public int CuisineId {get; set;}
         public Cuisine Cuisine {get; set;}
     }
