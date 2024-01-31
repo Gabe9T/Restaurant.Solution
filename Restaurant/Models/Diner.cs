@@ -8,6 +8,7 @@ namespace Restaurant.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Specialty { get; set; }
+        public int CuisineId {get; set;}
         public Cuisine Cuisine {get; set;}
     }
 }
