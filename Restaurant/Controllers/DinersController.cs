@@ -20,5 +20,11 @@ namespace Restaurant.Controllers
             List<Diner> model = _db.Diners.Include(diner => diner.Cuisine).ToList();
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+            return View();
+        }
     }
 }
