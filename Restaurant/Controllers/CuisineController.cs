@@ -30,7 +30,14 @@ namespace Restaurant.Controllers
         public ActionResult Create(Cuisine cuisine)
         {
             _db.Cuisines.Add(cuisine);
-            _db.SaveChanges
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            Cuisine thisCuisine = _db.Cuisines.Include(cuisine => cuisine.Diners).FirstOrDefault(cuisine => cuisine.CuisineId == id);
+            return View(thisCuisine);
         }
     }
 }

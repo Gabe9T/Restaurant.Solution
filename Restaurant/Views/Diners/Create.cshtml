@@ -1,3 +1,31 @@
+<!-- @{
+    Layout = "_Layout";
+}
+
+@model Restaurant.Models.Diner
+
+<h4>Add a new diner</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    <br />
+    @Html.TextBoxFor(model => model.Name, new { placeholder = "Name" })
+    <br />
+    @Html.LabelFor(model => model.Description)
+    <br />
+    @Html.TextBoxFor(model => model.Description, new { placeholder = "Description" })
+    <br />
+    @Html.LabelFor(model => model.Specialty)
+    <br />
+    @Html.TextBoxFor(model => model.Specialty, new { placeholder = "Speciality" })
+    <br />
+    @Html.Display(model => model.Cuisine)
+    @Html.Hidden(model => model.Cuisine.CuisineId)
+    <input type="submit" value="Add diner" />
+}
+
+<button>@Html.ActionLink("Show Diners", "Index")</button> -->
+
 @{
     Layout = "_Layout";
 }
@@ -15,11 +43,13 @@
     <br />
     @Html.TextBoxFor(model => model.Description, new { placeholder = "Description" })
     <br />
-    @Html.LabelFor(model => model.Name)
+    @Html.LabelFor(model => model.Specialty)
     <br />
-    @Html.TextBoxFor(model => model.Name, new { placeholder = "Name" })
+    @Html.TextBoxFor(model => model.Specialty, new { placeholder = "Speciality" })
     <br />
-    <input type="submit" value="Add Name" />
+    @Html.DisplayFor(model => model.Cuisine)
+    @Html.HiddenFor("Cuisine")
+    <input type="submit" value="Add diner" />
 }
 
-<p>@Html.ActionLink("Show Diners", "Index")</p>
+<button>@Html.ActionLink("Show Diners", "Index")</button>

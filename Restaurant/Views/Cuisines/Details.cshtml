@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+@model Restaurant.Models.Cuisine
+@using Restaurant.Models
+
+<h2>Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name):  @Html.DisplayFor(model => model.Name)</h3>
+<br />
+
+@if (Model.Diners.Count ==0)
+{
+  <h3>No diners serve this cuisine!</h3>
+}
+else
+{
+<h3>Diners:</h3>
+<ul>
+    @foreach (Diner diner in Model.Diners)
+    {
+        <li>@Html.ActionLink($"diner.Name", "Details", "Diners", new { id = diner.DinerId })</li>
+    }
+</ul>
+}
+
+<button>@Html.ActionLink("Add a diner to this cuisine", "Create", "Diners", new { id = Model.CuisineId })</button>
+<br />
+<!-- <p>@Html.ActionLink("Add Details of Cuisine", "Create", "Diners")</p>  -->
+<button>@Html.ActionLink("Back to list", "Index")</button> 

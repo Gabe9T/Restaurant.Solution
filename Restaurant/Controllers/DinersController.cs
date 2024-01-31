@@ -21,9 +21,10 @@ namespace Restaurant.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+            ViewBag.Cuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+            // Cuisine cuisine = new SelectList(_db.Cuisines, "CuisineId", "Name");
             return View();
         }
     }
