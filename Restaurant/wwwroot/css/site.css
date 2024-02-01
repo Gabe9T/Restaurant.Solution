@@ -49,12 +49,12 @@ button {
 
 button:hover {
 	background-color: whitesmoke;
-	border-color: lightgreen;
+	border-color: lightcoral;
 }
 
 a:hover {
 	text-decoration: none;
-	color: lightgreen;
+	border-color: lightcoral;
 }
 
 a {
