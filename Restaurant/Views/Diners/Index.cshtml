@@ -1,19 +1,24 @@
 @{
     Layout = "_Layout";
+    ViewData["Title"] = "Diner Search";
 }
+<div id="content">
+<h1>Diners</h1>
 
 @using Restaurant.Models;
-
+<hr />
 @if(@Model.Count == 0)
 {
     <h3>No diners have been added yet</h3>
 }
 
-<ul>
     @foreach(Diner diner in Model)
     {
-        <li>@Html.ActionLink($"{diner.Name}", "Details", new {id = diner.CuisineId})</li>
+        <h3>@Html.ActionLink($"{diner.Name}", "Details", new {id = diner.DinerId})</h3>
     }
-</ul>
+</div>
 
 <button>@Html.ActionLink("Add new diner", "Create")</button>
+<br />
+<button>@Html.ActionLink("Go Home", "Index", "Home")</button>
+

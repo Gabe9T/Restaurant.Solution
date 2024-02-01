@@ -74,5 +74,13 @@ namespace Restaurant.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+    [HttpPost]
+    public ActionResult Search(Search searchTerm)
+    {
+        IQueryable<Diner> results = _db.Diners
+            .Where(diner => diner.Name.Contains(searchTerm));
+        return View(model);
+    }
     }
 }

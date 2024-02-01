@@ -1,0 +1,24 @@
+@model Restaurant.Search
+
+<div class="header">
+<div class="logo-container">
+<a href="/">
+    <img src="~/images/diner_finder_logo.png" alt="Diner Finder logo">
+</a>
+</div>
+<div class="title">
+<h1>Diner Finder</h1>
+</div>
+<div class="filler">
+<form>
+</div>
+
+@using (Html.BeginForm("Search", "Diners", FormMethod.Post))
+{
+    <label for="SearchTerm">Search:</label>
+    @Html.TextBoxFor(model => model.SearchTerm)
+    
+    <input type="submit" value="Search" />
+}
+</div>
+

@@ -19,12 +19,11 @@ else
 <ul>
     @foreach (Diner diner in Model.Diners)
     {
-        <li>@Html.ActionLink($"diner.Name", "Details", "Diners", new { id = diner.DinerId })</li>
+        <li>@Html.ActionLink($"{diner.Name}", "Details", "Diners", new { id = diner.DinerId })</li>
     }
 </ul>
 }
 
-<button>@Html.ActionLink("Add a diner to this cuisine", "Create", "Diners", new { id = Model.CuisineId })</button>
-<br />
-<!-- <p>@Html.ActionLink("Add Details of Cuisine", "Create", "Diners")</p>  -->
-<button>@Html.ActionLink("Back to list", "Index")</button> 
+<p>@Html.ActionLink("Edit cuisine", "Edit", new { id = Model.CuisineId })</p>
+<p>@Html.ActionLink("Delete cuisine", "Delete", new { id = Model.CuisineId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
