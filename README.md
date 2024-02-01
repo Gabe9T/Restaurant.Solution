@@ -1,4 +1,4 @@
-# Dog Depot
+# Restaurant
 _by Gabriel Tucker & Teddy Peterschmidt_
 
 ## Description
