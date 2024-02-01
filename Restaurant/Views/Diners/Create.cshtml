@@ -19,11 +19,19 @@
     <br />
     @Html.TextBoxFor(model => model.Specialty, new { placeholder = "Specialty" })
     <br />
-    @Html.LabelFor(model => model.CuisineId, "Cuisine")
-    <br />
-    @Html.TextBoxFor(model => model.CuisineId, new { @readonly = "readonly", placeholder = ViewBag.Cuisine.CuisineId })
-    <br />
-    <input type="submit" value="Add diner" />
-}
+    @Html.LabelFor(model => model.Cuisine)
+    @Html.DropDownList("CuisineId")
+    @*@Html.LabelFor(model => model.CuisineId,  new {placeholder = "Cuisine"})
+    <br />*@
+    @*@Html.TextBoxFor(model => model.CuisineId, new { @readonly = "readonly", placeholder = ViewBag.Cuisine.Name, @type = "number", @Value = ViewBag.Cuisine.CuisineId })
+    <br />*@
 
+    @*@Html.LabelFor(model => model.CuisineId)
+    <br />
+    @Html.TextBoxFor(model => model.CuisineId, new { placeholder = "CuisineId" })
+    <br />*@
+    @*<input type="number" asp-for="CuisineId" value=ViewBag.Cuisine.CuisineId>*@
+    @* @Html.HiddenFor(model => model.CuisineId, new { @Value = ViewBag.Cuisine.CuisineId })*@
+    <input type="submit" value="Add diner" /> 
+}
 <button>@Html.ActionLink("Show Diners", "Index")</button>
